@@ -1,4 +1,5 @@
 const { defineConfig } = require('@vue/cli-service')
+const { UnifiedWebpackPluginV5 } = require('weapp-tailwindcss/webpack')
 module.exports = defineConfig({
   outputDir: `dist/${process.env.MPX_CURRENT_TARGET_MODE}`,
   pluginOptions: {
@@ -21,5 +22,12 @@ module.exports = defineConfig({
    * 如果希望node_modules下的文件时对应的缓存可以失效，
    * 可以将configureWebpack.snap.managedPaths修改为 []
    */
-  configureWebpack(config) {}
+  configureWebpack(config) {
+    config.plugins.push(
+      new UnifiedWebpackPluginV5({
+        rem2rpx: true,
+        appType: 'mpx'
+      })
+    )
+  }
 })
