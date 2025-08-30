@@ -1,5 +1,9 @@
 <template>
-  <list></list>
+  <view>
+    <list></list>
+    <view class="text-[123.432rpx] text-[#654321] bg-amber-50">Hello World</view>
+  </view>
+
 </template>
 
 <script lang="ts">

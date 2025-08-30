@@ -1,5 +1,7 @@
 const { defineConfig } = require('@vue/cli-service')
 const { UnifiedWebpackPluginV5 } = require('weapp-tailwindcss/webpack')
+const path = require('path')
+
 module.exports = defineConfig({
   outputDir: `dist/${process.env.MPX_CURRENT_TARGET_MODE}`,
   pluginOptions: {
@@ -26,7 +28,10 @@ module.exports = defineConfig({
     config.plugins.push(
       new UnifiedWebpackPluginV5({
         rem2rpx: true,
-        appType: 'mpx'
+        appType: 'mpx',
+        cssEntries: [
+          path.resolve(__dirname, 'src/app.css')
+        ]
       })
     )
   }

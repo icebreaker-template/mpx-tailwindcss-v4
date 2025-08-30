@@ -1,6 +1,6 @@
 <template>
   <view class="bg-[#434344]">
-    <view wx:for="{{listData}}" wx:key="*this">{{item}}</view>
+    <view wx:for="{{listData}}" wx:key="*this" class="text-[#ced41e]">{{item}}</view>
   </view>
 </template>
 

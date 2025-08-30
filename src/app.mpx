@@ -6,9 +6,7 @@ mpx.use(apiProxy, { usePromise: true })
 createApp({})
 </script>
 
-<style>
-@import "weapp-tailwindcss";
-</style>
+<style src="./app.css"></style>
 
 <script type="application/json">
   {
